@@ -8,7 +8,7 @@
 using namespace std;
 using namespace cv;
 
-void detectAndDisplay(const Mat& frame, CascadeClassifier& cascade, VideoWriter& video);
+void detectAndDisplay(Mat& frame, CascadeClassifier& cascade, VideoWriter& video);
 
 int main() {
     const String cascade_name("cascade2.xml");
@@ -43,7 +43,7 @@ int main() {
     return 0;
 }
 
-void detectAndDisplay(const Mat& frame, CascadeClassifier& cascade, VideoWriter& video) {
+void detectAndDisplay(Mat& frame, CascadeClassifier& cascade, VideoWriter& video) {
     Mat frame_gray;
     cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
     equalizeHist(frame_gray, frame_gray);
